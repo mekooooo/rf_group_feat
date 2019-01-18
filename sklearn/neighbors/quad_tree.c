@@ -1337,15 +1337,16 @@ struct __pyx_t_7sklearn_4tree_9_splitter_SplitRecord {
   double impurity_right;
 };
 
-/* "_splitter.pxd":84
+/* "_splitter.pxd":85
  * 
  *     # Methods
  *     cdef int init(self, object X, np.ndarray y,             # <<<<<<<<<<<<<<
- *                   DOUBLE_t* sample_weight,
+ *                   DOUBLE_t* sample_weight, object feature_group=*,
  *                   np.ndarray X_idx_sorted=*) except -1
  */
 struct __pyx_opt_args_7sklearn_4tree_9_splitter_8Splitter_init {
   int __pyx_n;
+  PyObject *feature_group;
   PyArrayObject *X_idx_sorted;
 };
 struct __pyx_t_7sklearn_4tree_5_tree_Node;
@@ -1399,11 +1400,12 @@ struct __pyx_opt_args_7sklearn_4tree_5_tree_4Tree_compute_feature_importances {
  * 
  *     cpdef build(self, Tree tree, object X, np.ndarray y,             # <<<<<<<<<<<<<<
  *                 np.ndarray sample_weight=*,
- *                 np.ndarray X_idx_sorted=*)
+ *                 object feature_group=*,
  */
 struct __pyx_opt_args_7sklearn_4tree_5_tree_11TreeBuilder_build {
   int __pyx_n;
   PyArrayObject *sample_weight;
+  PyObject *feature_group;
   PyArrayObject *X_idx_sorted;
 };
 struct __pyx_t_7sklearn_4tree_6_utils_StackRecord;
@@ -1644,6 +1646,7 @@ struct __pyx_obj_7sklearn_4tree_9_splitter_Splitter {
   PyObject *random_state;
   __pyx_t_7sklearn_4tree_9_splitter_UINT32_t rand_r_state;
   __pyx_t_7sklearn_4tree_9_splitter_SIZE_t *samples;
+  __pyx_t_7sklearn_4tree_9_splitter_DTYPE_t mask_feature;
   __pyx_t_7sklearn_4tree_9_splitter_SIZE_t n_samples;
   double weighted_n_samples;
   __pyx_t_7sklearn_4tree_9_splitter_SIZE_t *features;
@@ -1894,7 +1897,7 @@ static struct __pyx_vtabstruct_7sklearn_4tree_5_tree_Tree *__pyx_vtabptr_7sklear
 
 struct __pyx_vtabstruct_7sklearn_4tree_5_tree_TreeBuilder {
   PyObject *(*build)(struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder *, struct __pyx_obj_7sklearn_4tree_5_tree_Tree *, PyObject *, PyArrayObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_7sklearn_4tree_5_tree_11TreeBuilder_build *__pyx_optional_args);
-  PyObject *(*_check_input)(struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder *, PyObject *, PyArrayObject *, PyArrayObject *);
+  PyObject *(*_check_input)(struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder *, PyObject *, PyArrayObject *, PyArrayObject *, PyObject *);
 };
 static struct __pyx_vtabstruct_7sklearn_4tree_5_tree_TreeBuilder *__pyx_vtabptr_7sklearn_4tree_5_tree_TreeBuilder;
 
